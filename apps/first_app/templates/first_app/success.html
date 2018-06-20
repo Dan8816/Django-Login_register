@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'first_app/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1> Success! Welcome, {{ request.session.first_name }} </h1>
+        <form class="inline" action="/logout" method="POST">
+            {% csrf_token %}
+                <input type='submit' value='Logout'>
+        </form>
+    </div>
+</body>
+</html>
